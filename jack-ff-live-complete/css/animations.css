@@ -1,0 +1,88 @@
+
+/* ==========================================
+   JACK FF LIVE - CINEMATIC ANIMATIONS
+========================================== */
+
+@keyframes arena-atmosphere {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(18deg);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes smoke-drift {
+  0% {
+    transform: translate(-5%, 5%) scale(.9);
+  }
+  100% {
+    transform: translate(12%, -10%) scale(1.2);
+  }
+}
+
+@keyframes laser-sweep {
+  0% {
+    transform: rotate(-12deg) translateX(-8%);
+    opacity: .2;
+  }
+  100% {
+    transform: rotate(12deg) translateX(12%);
+    opacity: .85;
+  }
+}
+
+@keyframes laser-pulse {
+  0%, 100% { opacity: .15; }
+  50% { opacity: .9; }
+}
+
+@keyframes floor-move {
+  from { background-position: 0 0; }
+  to { background-position: 0 65px; }
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(.5);
+    opacity: 0;
+  }
+  15% { opacity: .9; }
+  80% { opacity: .7; }
+  100% {
+    transform: translate3d(var(--drift), -110vh, 0) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Character animation */
+@keyframes character-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Hero entrance */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect device accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
